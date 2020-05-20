@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.aplicativo.ecommand.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerUserFragment"
+            app:destination="@id/registerUserFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeClientFragment"
+            app:destination="@id/homeClientFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeEmployeeFragment"
+            app:destination="@id/homeEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerUserFragment"
+        android:name="com.aplicativo.ecommand.RegisterUserFragment"
+        android:label="fragment_register_user"
+        tools:layout="@layout/fragment_register_user" />
+    <fragment
+        android:id="@+id/readerQrCodeFragment"
+        android:name="com.aplicativo.ecommand.ReaderQrCodeFragment"
+        android:label="fragment_reader_qr_code"
+        tools:layout="@layout/fragment_reader_qr_code" >
+        <action
+            android:id="@+id/action_readerQrCodeFragment_to_listItensFragment"
+            app:destination="@id/listItensFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeClientFragment"
+        android:name="com.aplicativo.ecommand.HomeClientFragment"
+        android:label="fragment_home_client"
+        tools:layout="@layout/fragment_home_client" >
+        <action
+            android:id="@+id/action_homeClientFragment_to_readerQrCodeFragment"
+            app:destination="@id/readerQrCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputItensFragment"
+        android:name="com.aplicativo.ecommand.InputItensFragment"
+        android:label="fragment_input_itens"
+        tools:layout="@layout/fragment_input_itens" />
+    <fragment
+        android:id="@+id/listItensFragment"
+        android:name="com.aplicativo.ecommand.ListItensFragment"
+        android:label="fragment_list_itens"
+        tools:layout="@layout/fragment_list_itens" />
+    <fragment
+        android:id="@+id/homeEmployeeFragment"
+        android:name="com.aplicativo.ecommand.HomeEmployeeFragment"
+        android:label="fragment_home_employee"
+        tools:layout="@layout/fragment_home_employee" >
+        <action
+            android:id="@+id/action_homeEmployeeFragment_to_inputItensFragment"
+            app:destination="@id/inputItensFragment" />
+        <action
+            android:id="@+id/action_homeEmployeeFragment_to_readerQrCodeFragment"
+            app:destination="@id/readerQrCodeFragment" />
+    </fragment>
+</navigation>
