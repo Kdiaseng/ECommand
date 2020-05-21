@@ -9,5 +9,8 @@
     <string name="enter">ENTRAR</string>
     <string name="welcome">Bem-vindo,</string>
     <string name="dont_have_count">Não tem conta?</string>
-    <string name="register">cadastrar agora</string>
+    <string name="register_now">cadastrar agora</string>
+    <string name="register">Cadastrar </string>
+    <string name="name">Nome</string>
+    <string name="have_count">Você tem conta?</string>
 </resources>
