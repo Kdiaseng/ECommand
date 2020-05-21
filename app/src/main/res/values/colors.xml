@@ -2,5 +2,14 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#03DAC5</color>#26A295
+
+    <color name="command_green">#26A295</color>
+    <color name="command_white_ge">#F2F5F7</color>
+    <color name="command_red_100">#BF0000</color>
+    <color name="command_white">#F5F9F9</color>
+    <color name="command_red">#F7395F</color>
+    <color name="command_red_dark">#893956</color>
+    <color name="command_gray_blue">#253A4B</color>
+
 </resources>

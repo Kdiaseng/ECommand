@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.aplicativo.ecommand.LoginFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -22,21 +22,21 @@
     </fragment>
     <fragment
         android:id="@+id/registerUserFragment"
-        android:name="com.aplicativo.ecommand.RegisterUserFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.RegisterUserFragment"
         android:label="fragment_register_user"
         tools:layout="@layout/fragment_register_user" />
     <fragment
         android:id="@+id/readerQrCodeFragment"
-        android:name="com.aplicativo.ecommand.ReaderQrCodeFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.ReaderQrCodeFragment"
         android:label="fragment_reader_qr_code"
         tools:layout="@layout/fragment_reader_qr_code" >
         <action
-            android:id="@+id/action_readerQrCodeFragment_to_listItensFragment"
+            android:id="@+id/action_readerQrCodeFragment_to_listItemsFragment"
             app:destination="@id/listItensFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeClientFragment"
-        android:name="com.aplicativo.ecommand.HomeClientFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.HomeClientFragment"
         android:label="fragment_home_client"
         tools:layout="@layout/fragment_home_client" >
         <action
@@ -45,21 +45,21 @@
     </fragment>
     <fragment
         android:id="@+id/inputItensFragment"
-        android:name="com.aplicativo.ecommand.InputItensFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.InputItemsFragment"
         android:label="fragment_input_itens"
-        tools:layout="@layout/fragment_input_itens" />
+        tools:layout="@layout/fragment_input_items" />
     <fragment
         android:id="@+id/listItensFragment"
-        android:name="com.aplicativo.ecommand.ListItensFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.ListItemsFragment"
         android:label="fragment_list_itens"
-        tools:layout="@layout/fragment_list_itens" />
+        tools:layout="@layout/fragment_list_items" />
     <fragment
         android:id="@+id/homeEmployeeFragment"
-        android:name="com.aplicativo.ecommand.HomeEmployeeFragment"
+        android:name="com.aplicativo.ecommand.ui.fragment.HomeEmployeeFragment"
         android:label="fragment_home_employee"
         tools:layout="@layout/fragment_home_employee" >
         <action
-            android:id="@+id/action_homeEmployeeFragment_to_inputItensFragment"
+            android:id="@+id/action_homeEmployeeFragment_to_inputItemsFragment"
             app:destination="@id/inputItensFragment" />
         <action
             android:id="@+id/action_homeEmployeeFragment_to_readerQrCodeFragment"
