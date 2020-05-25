@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.aplicativo.ecommand.R
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.view.*
+import kotlinx.android.synthetic.main.fragment_login.view.button_login
 
 /**
  * A simple [Fragment] subclass.
@@ -19,13 +21,17 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val inflate = inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_login, container, false)
+    }
 
-        inflate.button_login.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_registerUserFragment)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        button_login.setOnClickListener {
+            it.findNavController().navigate(R.id.action_loginFragment_to_homeEmployeeFragment)
         }
-
-        return inflate
+        textView_register.setOnClickListener {
+            it.findNavController().navigate(R.id.action_loginFragment_to_registerUserFragment)
+        }
     }
 
 

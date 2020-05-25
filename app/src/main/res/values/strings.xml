@@ -13,4 +13,10 @@
     <string name="register">Cadastrar </string>
     <string name="name">Nome</string>
     <string name="have_count">Você tem conta?</string>
+    <string name="choose_options">"O que você deseja fazer? "</string>
+    <string name="add_item">Adicionar Item</string>
+    <string name="name_use">Olá, kaleb</string>
+    <string name="pay">Pagamento</string>
+    <string name="prorate">Ratear item</string>
+    <string name="increase_item">Acrescentar item</string>
 </resources>
