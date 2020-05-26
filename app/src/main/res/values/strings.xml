@@ -23,6 +23,7 @@
     <string name="order">Pedidos</string>
     <string name="quantity">Qtd :</string>
     <string name="zero">R$ 0,00</string>
+    <string name="zero_qtd">0</string>
     <string name="amount">Total:</string>
     <string name="items">%d itens</string>
     <string name="last_orders">Últimos pedidos</string>
@@ -34,6 +35,10 @@
     <string name="employee">Estabelecimento</string>
     <string name="close_count">Fechar conta</string>
     <string name="position_qr_code">Posiocione o Qr code no centro</string>
+    <string name="value">Valor</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Adicionar</string>
+    <string name="add_item_label">Adicione os itens</string>
 
 
 </resources>
