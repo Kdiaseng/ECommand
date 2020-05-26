@@ -33,6 +33,7 @@
     <string name="generete_qrcode">Gerar QrCode</string>
     <string name="employee">Estabelecimento</string>
     <string name="close_count">Fechar conta</string>
+    <string name="position_qr_code">Posiocione o Qr code no centro</string>
 
 
 </resources>

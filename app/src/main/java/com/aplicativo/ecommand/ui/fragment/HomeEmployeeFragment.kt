@@ -27,6 +27,10 @@ class HomeEmployeeFragment : Fragment() {
         cardView_add_item_menu.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeEmployeeFragment_to_inputItemsFragment)
         }
+
+        cardView_pay_menu.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeEmployeeFragment_to_readerQrCodeFragment)
+        }
     }
 
 }
