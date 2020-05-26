@@ -31,6 +31,8 @@
     <string name="date">00/00/000</string>
     <string name="not_order">Não há pedidos</string>
     <string name="generete_qrcode">Gerar QrCode</string>
+    <string name="employee">Estabelecimento</string>
+    <string name="close_count">Fechar conta</string>
 
 
 </resources>
