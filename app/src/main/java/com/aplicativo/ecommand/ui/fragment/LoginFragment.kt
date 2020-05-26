@@ -27,7 +27,8 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button_login.setOnClickListener {
-            it.findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
+//            it.findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
+            it.findNavController().navigate(R.id.action_loginFragment_to_homeEmployeeFragment)
         }
         textView_register.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerUserFragment)
