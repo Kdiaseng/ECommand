@@ -1,13 +1,17 @@
 package com.aplicativo.ecommand.ui.fragment
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.aplicativo.ecommand.R
 import kotlinx.android.synthetic.main.fragment_input_items.*
+import kotlinx.android.synthetic.main.input_item_dialog.*
 
 /**
  * A simple [Fragment] subclass.
@@ -15,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_input_items.*
  * create an instance of this fragment.
  */
 class InputItemsFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,13 +31,18 @@ class InputItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         floatingActionButtonAddItem.setOnClickListener {
-            val builder = AlertDialog.Builder(requireContext())
-            val layoutInflater = requireActivity().layoutInflater
-            val view = layoutInflater.inflate(R.layout.input_item_dialog, null)
 
-            builder.setView(view)
-            val dialog = builder.create()
-            dialog.show()
+            val dialog = AlertDialog.Builder(requireContext()).create().apply {
+                setView(layoutInflater.inflate(R.layout.input_item_dialog, null))
+                window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                show()
+            }
+            val btn = dialog.outlinedButton_save
+
+            btn.setOnClickListener {
+                Toast.makeText(requireContext(), "teste", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

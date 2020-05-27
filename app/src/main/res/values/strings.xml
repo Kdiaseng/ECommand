@@ -39,6 +39,8 @@
     <string name="cancel">Cancelar</string>
     <string name="add">Adicionar</string>
     <string name="add_item_label">Adicione os itens</string>
+    <string name="isClient">Cliente ?</string>
+    <string name="icon">icon</string>
 
 
 </resources>

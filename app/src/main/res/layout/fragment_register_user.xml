@@ -26,7 +26,8 @@
         android:src="@drawable/ic_assignment_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/icon" />
 
     <TextView
         android:id="@+id/textView"
@@ -59,18 +60,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <Switch
+                android:id="@+id/switch_is_client"
+                android:checked="true"
+                android:text="@string/isClient"
+                android:textStyle="italic"
+                android:textColor="@android:color/darker_gray"
+                android:switchPadding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/text_field_name_user"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:endIconDrawable="@drawable/ic_person_black_24dp"
-                app:endIconMode="custom"
-                app:endIconTint="@color/command_red"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="27dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="38dp"
                 android:layout_marginEnd="27dp"
                 android:hint="@string/name"
+                app:endIconDrawable="@drawable/ic_person_black_24dp"
+                app:endIconMode="custom"
+                app:endIconTint="@color/command_red"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
