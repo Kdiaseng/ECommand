@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
+        <import type="android.view.View"/>
+        <import type="com.aplicativo.ecommand.model.Item"/>
         <variable
             name="listener"
             type="android.view.View.OnClickListener" />
+        <variable
+            name="items"
+            type="java.util.ArrayList&lt;Item>" />
+        <variable
+            name="buttonClicked"
+            type="Boolean" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:background="@color/command_white_ge"
         android:layout_height="match_parent"
@@ -68,10 +75,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:visibility="@{buttonClicked ? View.VISIBLE: View.GONE}"
                     android:id="@+id/imageView_id_qrcode_input"
                     android:layout_width="110dp"
                     android:layout_height="110dp"
-                    android:src="@drawable/frame" />
+                    android:src="@drawable/frame"
+                    android:contentDescription="@string/welcome" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,7 +113,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
-                android:visibility="visible"
+                android:visibility="@{items.empty ? View.GONE: View.VISIBLE}"
                 tools:listitem="@layout/item_order" />
 
             <androidx.cardview.widget.CardView
@@ -112,7 +121,7 @@
                 android:id="@+id/cardView_not_found_input"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:visibility="gone">
+                android:visibility="@{items.empty ? View.VISIBLE: View.GONE }">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -142,7 +151,7 @@
         </LinearLayout>
 
         <Button
-            android:visibility="visible"
+            android:visibility="@{items.empty ? View.GONE: View.VISIBLE}"
             android:onClick="@{listener}"
             android:id="@+id/outlinedButton_generate_code"
             app:icon="@drawable/ic_developer_mode_black_24dp"

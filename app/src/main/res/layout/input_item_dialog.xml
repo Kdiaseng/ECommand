@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView app:cardCornerRadius="15dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:background="@color/command_white_ge"
@@ -57,6 +56,7 @@
                 android:id="@+id/outlinedTextField_description"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
+                android:focusable="true"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
@@ -67,6 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView_dialog_label">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:focusable="true"
                     android:id="@+id/textInput_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -92,15 +93,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
-                android:padding="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal"
+                android:padding="5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/outlinedTextField_value_dialog"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/outlinedTextField_value_dialog">
+                app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_description">
 
                 <Button
                     android:id="@+id/outlinedButton_more"

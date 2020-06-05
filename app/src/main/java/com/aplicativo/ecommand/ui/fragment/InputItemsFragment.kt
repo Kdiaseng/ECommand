@@ -2,6 +2,7 @@ package com.aplicativo.ecommand.ui.fragment
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,21 +25,25 @@ import org.koin.android.ext.android.inject
  */
 class InputItemsFragment : Fragment() {
 
+   var items = ArrayList<Item>()
+  private lateinit var viewBinding: FragmentInputItemsBinding
 
-    var items = ArrayList<Item>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val viewBinding = FragmentInputItemsBinding.inflate(inflater, container, false)
+        Log.e("size", items.size.toString())
+        viewBinding = FragmentInputItemsBinding.inflate(inflater, container, false)
         viewBinding.listener = View.OnClickListener {
             when (it.id) {
                 R.id.floatingActionButtonAddItem -> openDialog(requireContext())
                 R.id.outlinedButton_generate_code -> generateQRCode()
             }
         }
+        viewBinding.items = items
+        viewBinding.buttonClicked = false
         return viewBinding.root
     }
 
@@ -57,7 +62,7 @@ class InputItemsFragment : Fragment() {
 
 
     private fun generateQRCode() {
-        Toast.makeText(requireContext(), "GENERETE CODE", Toast.LENGTH_SHORT).show()
+        viewBinding.buttonClicked = true
     }
 
     private fun openDialog(context: Context) {
@@ -75,6 +80,7 @@ class InputItemsFragment : Fragment() {
 
             items.add(item)
             loadRecyclerView()
+            viewBinding.items = items
         }
     }
 
