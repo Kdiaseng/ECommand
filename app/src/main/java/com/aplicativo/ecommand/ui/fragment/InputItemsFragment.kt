@@ -14,6 +14,11 @@ import com.aplicativo.ecommand.databinding.FragmentInputItemsBinding
 import com.aplicativo.ecommand.model.Item
 import com.aplicativo.ecommand.ui.dialog.GenericDialog
 import com.aplicativo.ecommand.ui.recyclerview.adapter.ListItemsOrderAdapter
+import com.google.gson.Gson
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.MultiFormatWriter
+import com.google.zxing.WriterException
+import com.journeyapps.barcodescanner.BarcodeEncoder
 import kotlinx.android.synthetic.main.fragment_input_items.*
 import kotlinx.android.synthetic.main.input_item_dialog.*
 import org.koin.android.ext.android.inject
@@ -63,6 +68,20 @@ class InputItemsFragment : Fragment() {
 
     private fun generateQRCode() {
         viewBinding.buttonClicked = true
+        val gson = Gson()
+        val toJson = gson.toJson(items)
+        val multiFormatWriter = MultiFormatWriter()
+        try {
+            val bitMatrix = multiFormatWriter.encode(toJson, BarcodeFormat.QR_CODE, 200, 200)
+            val barcodeEncoder = BarcodeEncoder()
+            val bitmap = barcodeEncoder.createBitmap(bitMatrix)
+            imageView_id_qrcode_input.setImageBitmap(bitmap)
+
+        }catch (e: WriterException){
+            e.printStackTrace()
+        }
+
+
     }
 
     private fun openDialog(context: Context) {
